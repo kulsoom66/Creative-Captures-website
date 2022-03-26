@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Questionnaire</title>
+
+    <script src="https://kit.fontawesome.com/89719fd79f.js" crossorigin="anonymous"></script>
+    <!---used https://fontawesome.com/ to do the icons-->
+    <link rel="icon" type="image/x-icon" href="..\image\icon.png"> 
+    <!----Link for the css file-->
+    <link rel="stylesheet" type="text/css" href="..\css\style.css">
+
+    <style type="text/css">
+        .form{background-color:#f7e2df;
+            width: 40%;
+            padding: 40px;
+            margin: 50px;
+            border-radius: 25px;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form label{
+            font-size: medium;
+            color:#000000d2;
+            font-weight: bold;
+        }
+        .form p{
+            font-size: medium;
+            color:#000000d2;
+            font-weight: bold;
+        }
+        .form p label{
+            font-size: medium;
+            color:#000000af;
+            font-weight: bold;
+            margin-left: 40px;
+        }
+
+        .form label textarea{
+            width: 60%;
+            height: 20%;
+            font-size: smaller;
+            margin-left: 40px;
+
+        }
+
+        .textInput{
+            width: 60%;
+            height: 20px;
+            border:none ;
+            border-bottom: solid #F79489;
+        }
+        
+        .submitInput{
+            border:none ;
+            border-bottom: solid #F79489;
+            background-color: aliceblue;
+            color: #000000af;
+            padding: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            width: 20%;
+            height: 10%;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+     <!-------------------------header--------------------------------->
+     <div id="header">
+        <!---------------------------------------------------------->
+        <div class="logo_header">
+             <!----------------------Logo--------------------------->
+            <div class="logooo">
+                <img src="../image/logo.png" class="logo_img">
+            </div>
+        </div class="content_header">
+        <!--------------------------navigation bar--------------------------------->
+        <div class="content_header">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li>
+                    <a href="PhotoFileds.html">PhotoFileds</a>
+                </li>
+
+                <li><a href="rentTool.html">Rent Tool</a></li>
+                <li><a href="..\cart\cameras.html" style="color: white;">
+                    MyCart <span id="spanNo">0</span> </a>
+                </li>
+                <li><a href="contactUs.html">Contact Us</a></li>
+                <li><a href="..\fun\funpage.html">Have Fun</a></li>
+                <li><a href="questionnaire.html">Questionnaire</a></li>
+                <li><a href="account.html">My account</a></li>
+                <li><a href="login.html">Login In</a></li>
+                <li><a href="../php/database.html">Renting Information</a></li>
+
+            </ul>
+        </div>
+        <!---------------------------------------------------------------->
+    </div>
+        <!----Page content-->
+    <div class="form">
+        <div class="">
+            <!--on submit call validateService and validateRating-->
+        <form action="" id="myForm" onsubmit="return (validateService() && validateRating());">
+            <!--validate the name-->
+            <label>What is your name: <input type="text" id="name" class="textInput"/>
+            </label> <br />
+            <!--validate the age (14+)-->
+            <label >What is your age: <input type="text" id="age" class="textInput"/>
+            </label> <br />
+            <!---At leat on is check-->
+            <p>
+                What kind of service  did you use? <br />
+                <label>
+                    publishing your photos
+                    <input type="checkbox" name="service" value="publishPhotos"/>
+                </label><br/>
+
+                <label >
+                    download photos
+                    <input type="checkbox" name="service" value="download"/>
+                </label> <br />
+
+                <label >
+                    publishing your tools for rent
+                    <input type="checkbox" name="service" value="publishingRent"/>
+                </label> <br />
+
+                <label >
+                    renting tools
+                    <input type="checkbox" name="service" value="rent"/>
+                </label> <br />
+            </p>
+            
+            <!---the textarea should not be empty-->
+            <label class="">What things that our website is missing?: <textarea id="recommendation" row="2" col="4" ></textarea>
+            </label><br />
+
+            <!--Check one and only one-->
+            <p>
+                Please rate our website: <br />
+                <label>
+                    <input type="radio" name="rating" value="varyGood" />
+                    <i class="far fa-grin-hearts"></i>
+                </label>
+
+                <label>
+                    <input type="radio" name="rating" value="good" />
+                    <i class="far fa-smile"></i>
+                </label>
+
+                <label>
+                    <input type="radio" name="rating" value="fine" />
+                    <i class="far fa-meh"></i>
+                </label>
+
+                <label>
+                    <input type="radio" name="rating" value="bad" />
+                    <i class="far fa-frown"></i>
+                </label>
+
+                <label>
+                    <input type="radio" name="rating" value="tooBad" />
+                    <i class="far fa-meh-rolling-eyes"></i>
+                </label>
+            </p>
+            <input type="submit"  class="submitInput"/>
+        </form>
+        </div>
+    </div>
+        <!--------------Footer------------------------->
+        <div class="footer">
+            <h4>Creative Captures site</h4>
+            <p>Authors by:Arooba, Zamzam, and Kalsoom</p>
+            <div class="con">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter">@crative_captures</i>
+            </div>
+        </div>
+</body>
+</html>
+
+<script type="text/javascript" >
+
+//funcrion to check the name
+function checkName(){
+    var name= document.getElementById("name");
+    //it should start with capital letter
+    var pos = name.value.search(/^[A-Z]{1}[a-z]*/);
+    //if it is emptt, alert
+    if(name.value == ""){
+        alert("You did not enter your name!, We want to know your beautiful name :)");
+        return false;
+    }
+    //if it is in wrong format
+    else if (pos != 0){
+        alert("You Entered your name in the wrong format,{it should start with a capital letter}");
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+//function to check the age
+function checkAge(){
+
+    var ageElemnt = document.getElementById("age");
+    var age = ageElemnt.value;
+    // if age less than 14, alert
+    if (age < 14){
+        alert("Sorry you have to be 14+ :(");
+        return false;
+    } 
+    else{
+        return true;
+    }
+}
+
+// function to make sure that at least the user choose one of the service
+function validateService(){
+
+    var form0 = document.getElementById("myForm");
+    var checkedNumber = 0;
+
+    for (var i =0; i< form0.service.length; i++){
+        if (form0.service[i].checked){
+            checkedNumber++;
+        }
+    }
+
+    if (checkedNumber < 1){
+        alert("You have to choose at least one service");
+        return false
+    }
+    else{
+        return true
+    }
+}
+
+//function to validate the textarea, that the user should enter at least one word
+function validateRecommendation(){
+
+    var textarea0 = document.getElementById("recommendation");
+
+    if (textarea0.value == ""){
+        alert("You have to write at least one word");
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+//function to make sure that the user choose one from the rating scale
+function validateRating(){
+
+    var form0 = document.getElementById("myForm");
+    var checkedNumber = 0;
+    for (var i =0; i< form0.rating.length; i++){
+        if (form0.rating[i].checked){
+            checkedNumber++;
+        }
+    }
+
+    if (checkedNumber == 0){
+        alert("You did not rate our website :(, please choose one")
+        return false
+    }
+    else{
+        return true
+    }
+
+}
+//call the functions on chane the elements 
+document.getElementById("name").onchange = checkName;
+document.getElementById("age").onchange = checkAge;
+//call validateRecommendation when text area loos focus
+document.getElementById("recommendation").onblur = validateRecommendation;
+
+
+</script>

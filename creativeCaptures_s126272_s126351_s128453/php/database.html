@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!----Link for the css file-->
+    <link rel="stylesheet" type="text/css" href="..\css\style.css">
+    <style >
+
+            .form{background-color:#f7e2df;
+            width: 70%;
+            padding: 40px;
+            margin: 40px;
+            border-radius: 25px;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form label{
+            color:#000000d2;
+            font-weight: bold;
+            font-size:medium ;
+        }
+        .form p{
+            font-size: medium;
+            color:#000000d2;
+            font-weight: bold;
+        }
+        .form p label{
+            font-size: medium;
+            color:#000000af;
+            font-weight: bold;
+            margin-left: 40px;
+        }
+
+        .textInput{
+            width: 120px;
+            height: 20px;
+            border:none ;
+            border-bottom: solid #F79489;
+        }
+        
+        .submitInput{
+            border:none ;
+            border-bottom: solid #F79489;
+            background-color: aliceblue;
+            color: #000000af;
+            font-size: 12px;
+            font-weight: bold;
+            width: 60px;
+            height: 25px;
+            margin-left: 40px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-------------------------header--------------------------------->
+    <div id="header">
+        <!---------------------------------------------------------->
+        <div class="logo_header">
+             <!----------------------Logo--------------------------->
+            <div class="logooo">
+                <img src="../image/logo.png" class="logo_img">
+            </div>
+        </div class="content_header">
+        <!--------------------------navigation bar--------------------------------->
+        <div class="content_header">
+            <ul>
+                <li><a href="..\html\index.html">Home</a></li>
+                <li><a href="..\html\aboutUs.html">About Us</a></li>
+                <li>
+                    <a href="..\html\PhotoFileds.html">PhotoFileds</a>
+                </li>
+                <li><a href="..\html\rentTool.html">Rent Tool</a></li>
+                <li><a href="..\cart\cameras.html" style="color: white;">
+                    MyCart <span id="spanNo">0</span> </a>
+                </li>
+                <li><a href="..\html\contactUs.html">Contact Us</a></li>
+                <li><a href="..\html\fun\funpage.html">Have Fun</a></li>
+                <li><a href="..\html\questionnaire.html">Questionnaire</a></li>
+                <li><a href="..\html\account.html">My account</a></li>
+                <li><a href="..\html\login.html">Login In</a></li>
+                <li><a href="php/database.html">Renting Information</a></li>
+            </ul>
+        </div>
+        <!---------------------------------------------------------------->
+    </div>
+    <!----Page content----->
+    <div style="text-align: center; font-size: xx-large;">
+    <h2>Reanting Information</h2>
+    </div>
+    <!--Form for search-->
+    <div class="form">
+    <form action="DB_search.php" method="post">
+        <p>Searching for tool <br/>
+        <label>What are you searching for(Type)?
+        <input type="text" name="searchType" class="textInput"></label>
+        <br />
+        <label>You can add the name, for specific searching
+        <input type="text" name="searchName" class="textInput" ></label>
+        <br />
+        <input type="submit" value="search" name="s_submit" class="submitInput" >
+    </p>
+    </form>
+
+    <!--form for insearting-->
+    <form action="DB_inseart.php" method="post" >
+        <p>Add tools:<br />
+        <label>Id:<input type="text" name="id_tool" class="textInput"></label><br/>
+        <label>Name:<input type="text" name="name_tool" class="textInput"></label><br/>
+        <label>price:<input type="text" name="rent_price" class="textInput"></label><br/>
+        <label>Type:<input type="text" name="type_tooll" class="textInput"></label><br/>
+        <input type="submit" value="add" name="i_submit" class="submitInput" >
+        </p>
+    </form>
+
+    <!--Form for updateting-->
+    <form action="DB_update.php" method="post">
+        <p>Update price:<br />
+        <label>Tool ID:<input type="text" name="id_tool" class="textInput"></label><br/>
+        <label>price:<input type="text" name="rent_price" class="textInput"></label><br/>
+        <input type="submit" value="Update" name="u_submit" class="submitInput" >
+    </p>
+    </form>
+
+    <!--form fo dalete-->
+    <form action="DB_delete.php"  method="post" >
+        <p>Enter the tool's id to delete it:<br/>
+        <label>Id:<input type="text" name="id_tool" class="textInput"></label><br/>
+        <input type="submit" value="Delete" name = "d_submit" class="submitInput" /> 
+    </p> 
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	line-height: 1.5;
+	font-size: 14px;
+}
+
+#header .logo_header{
+    height: 100px;
+	top:0;
+	background-color: white;
+	width: 100%;
+	height: 100px;
+}
+
+.logooo
+{
+    height: 100px;
+    width: 300px;
+    background:white;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.logo_img{
+    width: 100%;
+    height: auto;
+    
+}
+#header .content_header{
+    background: #F79489;
+    height: 40px;
+}
+
+#header .content_header ul{
+    text-align:center;
+    padding: 0.5%;
+
+
+}
+#header .content_header ul li{
+    display: inline;
+    list-style: none;
+    margin: 1%;
+
+}
+#header .content_header ul li a{
+    text-decoration: none; 
+    color: #ffff;
+    padding: 9px 8px;   
+    
+}
+
+#header .content_header ul li :hover{
+   
+    text-decoration: underline;
+    color: #F9F1F0;
+}
+
+select{
+    color: #ffff;
+    border-color:#F79489 ;
+    background-color:#F79489 ;
+    outline: none; 
+}
+/*######################
+sinfin login
+########################*/
+#singIn {
+    height: 600px;
+    background: url(https://i.pinimg.com/564x/97/a9/25/97a9252003d615c835609b0033470001.jpg);
+    background-size: cover;
+}
+#singIn .bac_color {
+    height: 600px;
+    padding: 10px 100px;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.664);
+    
+}
+.inputForm{
+    width: 40%;
+    padding: 40px;
+    margin: 50px;
+    background:#fff;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+.inputForm h2{
+    font-size: 30px;
+    font-weight: 500;
+    color:  #F79489;
+    text-align: center;
+}
+
+.inputForm .input{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+.inputForm .inputinfo {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+.inputForm .inputinfo input{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #F79489 ;
+    outline: none;
+    resize: none;
+
+}
+.inputForm .inputinfo p{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    
+
+}
+.inputForm .inputinfo p a{
+    color:#F79489 ;
+    
+}
+
+.inputForm .inputinfo input[type="submit"]
+{
+    width: 100px;
+    background-color:#6e6564;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.messageBox{
+    width: 00%;
+    padding: 5px 0; 
+    font-size: 16px;
+    outline: none;
+    resize: none;
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/*###############################################
+footer
+#################################################*/
+.footer{
+    background: #F79489;
+    color:#fff;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+
+}  
+.footer p{
+    font-size: 14px;
+
+}  
+
+.footer i{
+    font-size: 18px;
+}
+.con{
+    display: inline-block;
+}
+
+
